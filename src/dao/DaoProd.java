@@ -26,7 +26,7 @@ public class DaoProd {
   }
   
   public void inserir (Prod prod){
-        String sql = "INSERT INTO diprod (tipo_,produto_,quantidade_) VALUES " + "(?,?,?)";
+        String sql = "INSERT INTO produtos (tipo_,produto_,quantidade_) VALUES " + "(?,?,?)";
         
         try{
             
@@ -45,7 +45,7 @@ public class DaoProd {
     }
   public Prod getProd(int id){
         
-            String sql = "SELECT * FROM diprod WHERE id_ = ?";
+            String sql = "SELECT * FROM produtos WHERE id_ = ?";
             
             try{
 
@@ -75,7 +75,7 @@ public class DaoProd {
   
     }
   public void excluir (int id){
-        String sql = "DELETE FROM diprod WHERE id_ = ?";
+        String sql = "DELETE FROM produtos WHERE id_ = ?";
         
             try{
 
@@ -93,7 +93,7 @@ public class DaoProd {
   
   public List<Prod> getProd(){
         
-            String sql = "SELECT * FROM diprod";
+            String sql = "SELECT * FROM produtos";
           
             try{
           
@@ -106,7 +106,7 @@ public class DaoProd {
                     
                     
                     Prod prod = new Prod();
-                    prod.setId(rs.getInt("id"));
+                    prod.setId(rs.getInt("id_"));
                     prod.setTipo(rs.getString ("tipo_"));
                     prod.setProduto(rs.getString ("produto_"));
                     prod.setQuantidade(rs.getInt ("quantidade_"));
